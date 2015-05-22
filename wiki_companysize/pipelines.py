@@ -4,8 +4,10 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import sqlite3 as sql
+import scrapy.exceptions.DropItem
 
 class WikiCompanysizePipeline(object):
+	# create our db if it doesn't exist already:
 	def __init__(self):
 		self.dbcon = sql.connect('results.db')
 		with self.dbcon:
@@ -17,7 +19,9 @@ class WikiCompanysizePipeline(object):
     		with self.dbcon:
     			cur = self.dbcon.cursor()
     			insert = (item['name'], item['employees'], item['as_of'])
-    			# passing a value of NULL to an integer primary key will cause the integer to autoincrement (sqlite3 quirk)
+    			# passing a value of NULL to an integer primary key will cause the integer to autoincrement (sqlite3 quirk),
     			# which is what we want here:
     			cur.execute('INSERT INTO companies VALUES (NULL, ?, ?, ?)', insert)
-        return item
+    		return item
+    	else:
+    		raise DropItem('Item missing key info, dropping...')
