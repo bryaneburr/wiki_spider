@@ -24,4 +24,4 @@ class WikiCompanysizePipeline(object):
     			cur.execute('INSERT INTO companies VALUES (NULL, ?, ?, ?)', insert)
     		return item
     	else:
-    		raise DropItem('Item missing key info, dropping...')
+    		raise DropItem('Item missing necessary info, dropping item...')

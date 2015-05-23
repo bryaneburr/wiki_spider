@@ -19,3 +19,16 @@ ROBOTSTXT_OBEY = True
 
 # Define our item pipeline(s)
 ITEM_PIPELINES = {'wiki_companysize.pipelines.WikiCompanysizePipeline': 100}
+
+# Don't need to accept cookies
+COOKIES_ENABLED = False
+
+# Don't need to follow redirects since we'll be working with wikipedia urls
+REDIRECT_ENABLED = False
+
+# Set logging level (should be INFO for production code, DEBUG for development)
+LOG_LEVEL = 'INFO'
+
+# Set number of concurrent requests
+CONCURRENT_REQUESTS = 100
+
