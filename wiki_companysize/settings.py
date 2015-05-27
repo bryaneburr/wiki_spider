@@ -32,3 +32,5 @@ LOG_LEVEL = 'INFO'
 # Set number of concurrent requests
 CONCURRENT_REQUESTS = 100
 
+DEPTH_LIMIT = 1
+
