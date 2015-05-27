@@ -8,4 +8,3 @@ from scrapy.item import Item, Field
 class WikiCompanysizeItem(Item):
     name = Field() # company name
     employees = Field() # number of employees
-    as_of = Field() # as of some year (might be null)
