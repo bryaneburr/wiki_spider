@@ -25,7 +25,7 @@ class WikiSpiderSpider(CrawlSpider):
             for tr in table.xpath('.//tr'):
                 if tr.xpath('.//th/div/text()').extract() == [u'Number of employees']:
                     # extract data we want 
-                    i['employees'] = tr.xpath('.//td/text()').extract()
+                    i['employees'] = tr.xpath('.//td/text()').extract()[0]
                     print i['employees']
                     i['name'] = sel.xpath('//*[@id="firstHeading"]/text()').extract()[0]
                     # if we've found what we're after, we're done:
