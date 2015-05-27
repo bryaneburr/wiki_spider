@@ -7,7 +7,8 @@ class WikiSpiderSpider(CrawlSpider):
     name = 'wiki_spider'
     allowed_domains = ['en.wikipedia.org']
     start_urls = [#'http://www.en.wikipedia.org/'
-                    'http://en.wikipedia.org/wiki/Apple_Inc.'
+                   #'http://en.wikipedia.org/wiki/Apple_Inc.'
+                   'http://en.wikipedia.org/wiki/Lists_of_companies'
                  ]
 
     # follow all links on page that point to any valid wikipedia page
