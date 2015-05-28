@@ -39,7 +39,7 @@ To stop the spider while scraping, press `ctrl+C` in the terminal to send `SIGIN
 
 This scrapy web crawler consists of two main components:
 
-1. A [spider](http://doc.scrapy.org/en/latest/topics/spiders.html) that parses http responses and extracts the desired information (see `wiki_companyzie/spiders/wiki_spider.py`), and
+1. A [spider](http://doc.scrapy.org/en/latest/topics/spiders.html) that parses http responses and extracts the desired information (see `wiki_companysize/spiders/wiki_spider.py`), and
 2. A [pipeline](http://doc.scrapy.org/en/latest/topics/item-pipeline.html) that takes items parsed from the response and saves them to an sqlite3 database (see `wiki_companysize/pipelines.py`).
 
 More information about the specifics of the scrapy architecture can be found [here](http://doc.scrapy.org/en/latest/topics/architecture.html).
