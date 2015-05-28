@@ -34,5 +34,5 @@ class WikiSpiderSpider(CrawlSpider):
                     # if we've found what we're after, we're done, return the item:
                     return i
        # won't get here unless nothing is found on the page matching what we want - 
-       # empty items are handled by the pipeline:
+       # empty items are handled by the pipeline, so we don't check here:
         return i
