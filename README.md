@@ -35,6 +35,18 @@ scrapy crawl wiki_spider
 
 To stop the spider while scraping, press `ctrl+C` in the terminal to send `SIGINT` to the process. It may take a few moments to exit gracefully, so please be patient.
 
+#### How it works
+
 #### Settings
 
 ## FAQ
+
+##### Why did you use sqlite3 to store the data? Why not MySQL/Postgres/Mongo/etc.?
+
+##### Why did you pick these specific starting urls?
+
+##### What's wrong with Depth-First search?
+
+##### Why do you store the company size as a string and not an integer? Wouldn't integers be easier to work with/ make more sense?
+
+##### 
