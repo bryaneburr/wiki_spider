@@ -16,7 +16,8 @@ class WikiCompanysizePipeline(object):
 			cur.execute('CREATE TABLE IF NOT EXISTS companies(id INTEGER PRIMARY KEY, name STRING, employees STRING)')
 
 	def process_item(self, item, spider):
-		if item['name']:
+		# check to see if item actually has the info we want:
+		if item['employees']:
 			with self.dbcon:
 				cur = self.dbcon.cursor()
 				insert = (item['name'], item['employees'])

@@ -29,8 +29,20 @@ REDIRECT_ENABLED = False
 # Set logging level (should be INFO for production code, DEBUG for development)
 LOG_LEVEL = 'INFO'
 
-# Set number of concurrent requests
-CONCURRENT_REQUESTS = 100
+# Set number of concurrent requests (16 is probably a good place to start, 
+# increase this quantity if you have more cores available)
+CONCURRENT_REQUESTS = 16
 
+# Depth limit for crawler (kind of necessary for this project, considering we 
+# probably don't want to crawl all 9.7 Gb of english wikipedia) - I've found
+# that a depth limit of 10 grabs a good amount of data (takes a while, though)
 DEPTH_LIMIT = 10
+
+# These options guarantee breadth-first search, which is better for our purposes
+# see http://doc.scrapy.org/en/latest/faq.html#does-scrapy-crawl-in-breadth-first-or-depth-first-order
+# for more info
+# (comment out the following three lines to revert to depth-first search)
+DEPTH_PRIORITY = 1
+SCHEDULER_DISK_QUEUE = 'scrapy.squeue.PickleFifoDiskQueue'
+SCHEDULER_MEMORY_QUEUE = 'scrapy.squeue.FifoMemoryQueue'
 
