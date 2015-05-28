@@ -67,7 +67,7 @@ I chose sqlite3 for a number of reasons:
 1. It comes standard on nearly every modern OS.
 2. The sqlite3 python library comes standard with python 2.7 and is very easy and straightforward to use.
 3. I didn't want to spend a lot of time setting up and administrating another database - it's ready to go right out of the gate.
-4. I wanted the database to be portable (IE, you don't have to set up a whole new database on your own machine in order to use the scraper)
+4. I wanted the database to be portable (IE, you don't have to set up a whole new database on your own machine in order to use the scraper) - by the way, the `results.db` file contains ~2000 records scraped by me this afternoon.
  
 If I were to deploy this project in more serious settings, I would probably use Postgres, and set up a simple REST service to access the data post-scrape.
 
