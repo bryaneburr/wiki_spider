@@ -35,7 +35,7 @@ scrapy crawl wiki_spider
 
 To stop the spider while scraping, press `ctrl+C` in the terminal to send `SIGINT` to the process. It may take a few moments to exit gracefully, so please be patient.
 
-#### How it works
+## How it works
 
 This scrapy web crawler consists of two main components:
 
@@ -44,13 +44,13 @@ This scrapy web crawler consists of two main components:
 
 More information about the specifics of the scrapy architecture can be found [here](http://doc.scrapy.org/en/latest/topics/architecture.html).
 
-The `parse_item` method in `wiki_spider.py` searches the html document for an xpath that matches the CSS class of the information sidebar (which is represented using a `<table>`) on a company's wikipedia page. If found, it then searches this table for a `<th>` which contains the text `Number of employees`, extracts the text in the corresponding `<td>`, and passes this information, in the form of an `item` (see ``wiki_companysize/items.py`) to the pipeline. 
+The `parse_item` method in `wiki_spider.py` searches the html document for an xpath that matches the CSS class of the information sidebar (which is represented using a `<table>`) on a company's wikipedia page. If found, it then searches this table for a `<th>` which contains the text `'Number of employees'`, extracts the text in the corresponding `<td>`, and passes this information, in the form of an `item` (see `wiki_companysize/items.py`) to the pipeline. 
 
 The pipeline ensures that the `item` is not empty, then stores the item's contents in the database. At this time, database records consist of an autoincrementing integer `id`, the `name` of the company, and the corresponding number of `employees`. The number of employees and the company name are both stored as strings (more on this later). 
 
 The crawler will continue until it has reached its maximum depth limit, as defined in `settings.py`.
 
-#### Settings
+## Settings
 
 ## FAQ
 
