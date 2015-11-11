@@ -1,5 +1,5 @@
 # wiki_spider
-Web crawling project for Nitr.io, built using [scrapy](http://scrapy.org/). Scrapes the number of employees from the wikipedia pages of various companies.
+Web crawling project, built using [scrapy](http://scrapy.org/). Scrapes the number of employees from the wikipedia pages of various companies.
 
 ## Setup
 
